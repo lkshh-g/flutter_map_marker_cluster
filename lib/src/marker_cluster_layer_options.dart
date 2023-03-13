@@ -90,7 +90,7 @@ class PopupOptions {
 }
 
 typedef ClusterWidgetBuilder = Widget Function(
-    BuildContext context, List<Map<String, dyanamic>> markers);
+    BuildContext context, List<CustomMarker> markers);
 
 class MarkerClusterLayerOptions {
   /// Cluster builder
@@ -219,4 +219,19 @@ class MarkerClusterLayerOptions {
     this.onMarkersClustered,
     this.popupOptions,
   });
+}
+
+
+class CustomMarker extends Marker {
+  CustomMarker(
+      {required super.point,
+      required super.builder,
+      required super.height,
+      required super.width,
+      required super.anchorPos,
+      required super.rotateOrigin,
+      required this.extras})
+      : super();
+
+  final Map<String,dynamic> extras;
 }
