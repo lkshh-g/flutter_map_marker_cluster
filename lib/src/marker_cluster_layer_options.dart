@@ -220,3 +220,17 @@ class MarkerClusterLayerOptions {
     this.popupOptions,
   });
 }
+
+class CustomMarker extends Marker {
+  CustomMarker(
+      {required super.point,
+      required super.builder,
+      required super.height,
+      required super.width,
+      required super.anchorPos,
+      required super.rotateOrigin,
+      required this.extras})
+      : super();
+
+  final Map<String,dynamic> extras;
+}
