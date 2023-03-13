@@ -21,7 +21,7 @@ class _ClusteringManyMarkersPageState extends State<ClusteringManyMarkersPage> {
   final minLatLng = LatLng(49.8566, 1.3522);
   final maxLatLng = LatLng(58.3498, -10.2603);
 
-  late List<CustomMarker> markers;
+  late List<Marker> markers;
 
   @override
   void initState() {
@@ -41,7 +41,7 @@ class _ClusteringManyMarkersPageState extends State<ClusteringManyMarkersPage> {
         );
 
         markers.add(
-          CustomMarker(
+          Marker(
             height: 30,
             width: 30,
             point: latLng,
