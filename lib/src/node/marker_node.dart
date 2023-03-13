@@ -1,10 +1,11 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_map/plugin_api.dart';
+import 'package:flutter_map_marker_cluster/src/marker_cluster_layer_options.dart';
 import 'package:flutter_map_marker_cluster/src/node/marker_or_cluster_node.dart';
 import 'package:latlong2/latlong.dart';
 
-class MarkerNode extends MarkerOrClusterNode implements Marker {
-  final Marker marker;
+class MarkerNode extends MarkerOrClusterNode implements CustomMarker {
+  final CustomMarker marker;
 
   MarkerNode(this.marker) : super(parent: null);
 
@@ -51,4 +52,8 @@ class MarkerNode extends MarkerOrClusterNode implements Marker {
 
     return Bounds(ne, sw);
   }
+
+  @override
+  // TODO: implement extras
+  Map<String, dynamic>? get extras => throw UnimplementedError();
 }

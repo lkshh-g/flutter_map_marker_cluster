@@ -97,7 +97,7 @@ class MarkerClusterLayerOptions {
   final ClusterWidgetBuilder builder;
 
   /// List of markers
-  final List<Marker> markers;
+  final List<CustomMarker> markers;
 
   /// If true markers will be counter rotated to the map rotation
   final bool? rotate;
@@ -127,7 +127,7 @@ class MarkerClusterLayerOptions {
   final Size size;
 
   /// Cluster compute size
-  final Size Function(List<Marker>)? computeSize;
+  final Size Function(List<CustomMarker>)? computeSize;
 
   /// Cluster anchor
   final AnchorPos? anchor;
@@ -172,19 +172,19 @@ class MarkerClusterLayerOptions {
   /// Polygon's options that shown when tap cluster.
   final PolygonOptions polygonOptions;
 
-  /// Function to call when a Marker is tapped
-  final void Function(Marker)? onMarkerTap;
+  /// Function to call when a CustomMarker is tapped
+  final void Function(CustomMarker)? onMarkerTap;
 
-  /// Function to call when a Marker starts to be hovered
-  final void Function(Marker)? onMarkerHoverEnter;
+  /// Function to call when a CustomMarker starts to be hovered
+  final void Function(CustomMarker)? onMarkerHoverEnter;
 
-  /// Function to call when a Marker stops to be hovered
-  final void Function(Marker)? onMarkerHoverExit;
+  /// Function to call when a CustomMarker stops to be hovered
+  final void Function(CustomMarker)? onMarkerHoverExit;
 
   /// Function to call when markers are clustered
-  final void Function(List<Marker>)? onMarkersClustered;
+  final void Function(List<CustomMarker>)? onMarkersClustered;
 
-  /// Function to call when a cluster Marker is tapped
+  /// Function to call when a cluster CustomMarker is tapped
   final void Function(MarkerClusterNode)? onClusterTap;
 
   /// Popup's options that show when tapping markers or via the PopupController.
@@ -221,16 +221,15 @@ class MarkerClusterLayerOptions {
   });
 }
 
-
 class CustomMarker extends Marker {
   CustomMarker(
       {required super.point,
       required super.builder,
-      required super.height,
-      required super.width,
-      required super.anchorPos,
-      required super.rotateOrigin,
-      required this.extras});
+      super.height,
+      super.width,
+      super.anchorPos,
+      super.rotateOrigin,
+      this.extras});
 
-  final Map<String,dynamic> extras;
+  final Map<String, dynamic>? extras;
 }
