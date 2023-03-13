@@ -230,8 +230,7 @@ class CustomMarker extends Marker {
       required super.width,
       required super.anchorPos,
       required super.rotateOrigin,
-      required this.extras})
-      : super();
+      required this.extras});
 
   final Map<String,dynamic> extras;
 }
