@@ -348,7 +348,7 @@ class _MarkerClusterLayerState extends State<MarkerClusterLayer>
     );
 
     // children
-    final markersGettingClustered = <CustomMarker>[];
+    final markersGettingClustered = <Marker>[];
     for (final child in clusterNode.children) {
       if (child is MarkerNode) {
         markersGettingClustered.add(child.marker);
