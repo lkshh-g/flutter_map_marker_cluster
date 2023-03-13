@@ -1,9 +1,9 @@
 import 'dart:ui';
 
 import 'package:flutter_map/plugin_api.dart';
+import 'package:flutter_map_marker_cluster/flutter_map_marker_cluster.dart';
 import 'package:flutter_map_marker_cluster/src/core/distance_grid.dart';
 import 'package:flutter_map_marker_cluster/src/map_calculator.dart';
-import 'package:flutter_map_marker_cluster/src/node/marker_cluster_node.dart';
 import 'package:flutter_map_marker_cluster/src/node/marker_node.dart';
 import 'package:flutter_map_marker_cluster/src/node/marker_or_cluster_node.dart';
 
@@ -11,7 +11,7 @@ class ClusterManager {
   final MapCalculator mapCalculator;
   final AnchorPos? anchorPos;
   final Size predefinedSize;
-  final Size Function(List<Marker>)? computeSize;
+  final Size Function(List<CustomMarker>)? computeSize;
 
   late final Map<int, DistanceGrid<MarkerClusterNode>> _gridClusters;
   late final Map<int, DistanceGrid<MarkerNode>> _gridUnclustered;
@@ -35,7 +35,7 @@ class ClusterManager {
     required MapCalculator mapCalculator,
     required AnchorPos? anchorPos,
     required Size predefinedSize,
-    required Size Function(List<Marker>)? computeSize,
+    required Size Function(List<CustomMarker>)? computeSize,
     required int minZoom,
     required int maxZoom,
     required int maxClusterRadius,

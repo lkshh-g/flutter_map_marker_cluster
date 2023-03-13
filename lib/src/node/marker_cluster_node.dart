@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_map/plugin_api.dart';
+import 'package:flutter_map_marker_cluster/flutter_map_marker_cluster.dart';
 import 'package:flutter_map_marker_cluster/src/node/marker_node.dart';
 import 'package:flutter_map_marker_cluster/src/node/marker_or_cluster_node.dart';
 import 'package:latlong2/latlong.dart';
@@ -9,11 +10,11 @@ import 'package:latlong2/latlong.dart';
 class _Derived {
   final markerNodes = <MarkerNode>[];
   final bounds = LatLngBounds();
-  late final List<Marker> markers;
+  late final List<CustomMarker> markers;
   late final Size? size;
 
   _Derived(List<MarkerOrClusterNode> children,
-      Size Function(List<Marker>)? computeSize) {
+      Size Function(List<CustomMarker>)? computeSize) {
     // Recursively add all markers.
     markerNodes.addAll(children.whereType<MarkerNode>());
     for (final child in children) {
@@ -36,7 +37,7 @@ class MarkerClusterNode extends MarkerOrClusterNode {
   final int zoom;
   final AnchorPos? anchorPos;
   final Size predefinedSize;
-  final Size Function(List<Marker>)? computeSize;
+  final Size Function(List<CustomMarker>)? computeSize;
   final children = <MarkerOrClusterNode>[];
 
   late _Derived _derived;
@@ -53,8 +54,8 @@ class MarkerClusterNode extends MarkerOrClusterNode {
   /// A list of all marker nodex recursively, i.e including child layers.
   List<MarkerNode> get markers => _derived.markerNodes;
 
-  /// A list of all Marker widgets recursively, i.e. including child layers.
-  List<Marker> get mapMarkers => _derived.markers;
+  /// A list of all CustomMarker widgets recursively, i.e. including child layers.
+  List<CustomMarker> get mapMarkers => _derived.markers;
 
   /// LatLong bounds of the transitive markers covered by this cluster.
   LatLngBounds get bounds => _derived.bounds;
