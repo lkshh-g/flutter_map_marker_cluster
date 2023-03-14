@@ -97,7 +97,7 @@ class MarkerClusterLayerOptions {
   final ClusterWidgetBuilder builder;
 
   /// List of markers
-  final List<Marker> markers;
+  final List<CustomMarker> markers;
 
   /// If true markers will be counter rotated to the map rotation
   final bool? rotate;
@@ -221,16 +221,18 @@ class MarkerClusterLayerOptions {
   });
 }
 
-
 class CustomMarker extends Marker {
   CustomMarker(
       {required super.point,
       required super.builder,
-      required super.height,
-      required super.width,
-      required super.anchorPos,
-      required super.rotateOrigin,
-      required this.extras});
+      super.height,
+      super.width,
+      super.anchorPos,
+      super.rotateOrigin,
+      super.rotate,
+      super.rotateAlignment,
+      super.key,
+      this.extras});
 
-  final Map<String,dynamic> extras;
+  final Map<String, dynamic>? extras;
 }
