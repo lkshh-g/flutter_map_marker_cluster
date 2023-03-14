@@ -2,14 +2,15 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
+import 'package:flutter_map_marker_cluster/flutter_map_marker_cluster.dart';
 import 'package:flutter_map_marker_cluster/src/core/distance_grid.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:latlong2/latlong.dart';
 
 void main() {
   test('addObject', () {
-    final grid = DistanceGrid<Marker>(100),
-        obj = Marker(
+    final grid = DistanceGrid<CustomMarker>(100),
+        obj = CustomMarker(
           point: LatLng(1, 2),
           builder: (ctx) => const FlutterLogo(),
         );
@@ -19,8 +20,8 @@ void main() {
   });
 
   test('eachObject', () {
-    final grid = DistanceGrid<Marker>(100),
-        obj = Marker(
+    final grid = DistanceGrid<CustomMarker>(100),
+        obj = CustomMarker(
           point: LatLng(1, 2),
           builder: (ctx) => const FlutterLogo(),
         );
@@ -33,8 +34,8 @@ void main() {
   });
 
   test('getNearObject', () {
-    final grid = DistanceGrid<Marker>(100),
-        obj = Marker(
+    final grid = DistanceGrid<CustomMarker>(100),
+        obj = CustomMarker(
           point: LatLng(1, 2),
           builder: (ctx) => const FlutterLogo(),
         );
@@ -46,8 +47,8 @@ void main() {
   });
 
   test('getNearObject double', () {
-    final grid = DistanceGrid<Marker>(100),
-        obj = Marker(
+    final grid = DistanceGrid<CustomMarker>(100),
+        obj = CustomMarker(
           point: LatLng(1, 2),
           builder: (ctx) => const FlutterLogo(),
         );
@@ -60,12 +61,12 @@ void main() {
   });
 
   test('getNearObject with cellSize 0', () {
-    final grid = DistanceGrid<Marker>(0),
-        obj1 = Marker(
+    final grid = DistanceGrid<CustomMarker>(0),
+        obj1 = CustomMarker(
           point: LatLng(1, 2),
           builder: (ctx) => const FlutterLogo(),
         ),
-        obj2 = Marker(
+        obj2 = CustomMarker(
           point: LatLng(2, 3),
           builder: (ctx) => const FlutterLogo(),
         );
@@ -78,12 +79,12 @@ void main() {
   });
 
   test('getNearObject with cellSize 0 double', () {
-    final grid = DistanceGrid<Marker>(0),
-        obj1 = Marker(
+    final grid = DistanceGrid<CustomMarker>(0),
+        obj1 = CustomMarker(
           point: LatLng(1, 2),
           builder: (ctx) => const FlutterLogo(),
         ),
-        obj2 = Marker(
+        obj2 = CustomMarker(
           point: LatLng(2, 3),
           builder: (ctx) => const FlutterLogo(),
         );

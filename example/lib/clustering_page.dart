@@ -16,7 +16,7 @@ class ClusteringPage extends StatefulWidget {
 class _ClusteringPageState extends State<ClusteringPage> {
   final PopupController _popupController = PopupController();
 
-  late List<Marker> markers;
+  late List<CustomMarker> markers;
   late int pointIndex;
   List<LatLng> points = [
     LatLng(51.5, -0.09),
@@ -27,126 +27,126 @@ class _ClusteringPageState extends State<ClusteringPage> {
   void initState() {
     pointIndex = 0;
     markers = [
-      Marker(
+      CustomMarker(
         anchorPos: AnchorPos.align(AnchorAlign.center),
         height: 30,
         width: 30,
         point: points[pointIndex],
         builder: (ctx) => const Icon(Icons.pin_drop),
       ),
-      Marker(
+      CustomMarker(
         anchorPos: AnchorPos.align(AnchorAlign.center),
         height: 30,
         width: 30,
         point: LatLng(53.3498, -6.2603),
         builder: (ctx) => const Icon(Icons.pin_drop),
       ),
-      Marker(
+      CustomMarker(
         anchorPos: AnchorPos.align(AnchorAlign.center),
         height: 30,
         width: 30,
         point: LatLng(53.3488, -6.2613),
         builder: (ctx) => const Icon(Icons.pin_drop),
       ),
-      Marker(
+      CustomMarker(
         anchorPos: AnchorPos.align(AnchorAlign.center),
         height: 30,
         width: 30,
         point: LatLng(53.3488, -6.2613),
         builder: (ctx) => const Icon(Icons.pin_drop),
       ),
-      Marker(
+      CustomMarker(
         anchorPos: AnchorPos.align(AnchorAlign.center),
         height: 30,
         width: 30,
         point: LatLng(48.8566, 2.3522),
         builder: (ctx) => const Icon(Icons.pin_drop),
       ),
-      Marker(
+      CustomMarker(
         anchorPos: AnchorPos.align(AnchorAlign.center),
         height: 30,
         width: 30,
         point: LatLng(49.8566, 3.3522),
         builder: (ctx) => const Icon(Icons.pin_drop),
       ),
-      Marker(
+      CustomMarker(
         anchorPos: AnchorPos.align(AnchorAlign.center),
         height: 30,
         width: 30,
         point: LatLng(49.8566, 3.3522),
         builder: (ctx) => const Icon(Icons.pin_drop),
       ),
-      Marker(
+      CustomMarker(
         anchorPos: AnchorPos.align(AnchorAlign.center),
         height: 30,
         width: 30,
         point: LatLng(49.8566, 3.3522),
         builder: (ctx) => const Icon(Icons.pin_drop),
       ),
-      Marker(
+      CustomMarker(
         anchorPos: AnchorPos.align(AnchorAlign.center),
         height: 30,
         width: 30,
         point: LatLng(49.8566, 3.3522),
         builder: (ctx) => const Icon(Icons.pin_drop),
       ),
-      Marker(
+      CustomMarker(
         anchorPos: AnchorPos.align(AnchorAlign.center),
         height: 30,
         width: 30,
         point: LatLng(49.8566, 3.3522),
         builder: (ctx) => const Icon(Icons.pin_drop),
       ),
-      Marker(
+      CustomMarker(
         anchorPos: AnchorPos.align(AnchorAlign.center),
         height: 30,
         width: 30,
         point: LatLng(49.8566, 3.3522),
         builder: (ctx) => const Icon(Icons.pin_drop),
       ),
-      Marker(
+      CustomMarker(
         anchorPos: AnchorPos.align(AnchorAlign.center),
         height: 30,
         width: 30,
         point: LatLng(49.8566, 3.3522),
         builder: (ctx) => const Icon(Icons.pin_drop),
       ),
-      Marker(
+      CustomMarker(
         anchorPos: AnchorPos.align(AnchorAlign.center),
         height: 30,
         width: 30,
         point: LatLng(49.8566, 3.3522),
         builder: (ctx) => const Icon(Icons.pin_drop),
       ),
-      Marker(
+      CustomMarker(
         anchorPos: AnchorPos.align(AnchorAlign.center),
         height: 30,
         width: 30,
         point: LatLng(49.8566, 3.3522),
         builder: (ctx) => const Icon(Icons.pin_drop),
       ),
-      Marker(
+      CustomMarker(
         anchorPos: AnchorPos.align(AnchorAlign.center),
         height: 30,
         width: 30,
         point: LatLng(49.8566, 3.3522),
         builder: (ctx) => const Icon(Icons.pin_drop),
       ),
-      Marker(
+      CustomMarker(
         anchorPos: AnchorPos.align(AnchorAlign.center),
         height: 30,
         width: 30,
         point: LatLng(49.8566, 3.3522),
         builder: (ctx) => const Icon(Icons.pin_drop),
       ),
-      Marker(
+      CustomMarker(
         anchorPos: AnchorPos.align(AnchorAlign.center),
         height: 30,
         width: 30,
         point: LatLng(49.8566, 3.3522),
         builder: (ctx) => const Icon(Icons.pin_drop),
       ),
-      Marker(
+      CustomMarker(
         anchorPos: AnchorPos.align(AnchorAlign.center),
         height: 30,
         width: 30,
@@ -172,7 +172,7 @@ class _ClusteringPageState extends State<ClusteringPage> {
             pointIndex = 0;
           }
           setState(() {
-            markers[0] = Marker(
+            markers[0] = CustomMarker(
               point: points[pointIndex],
               anchorPos: AnchorPos.align(AnchorAlign.center),
               height: 30,
